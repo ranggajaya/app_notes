@@ -45,28 +45,37 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
             ? Center(child: CircularProgressIndicator())
             : Padding(
                 padding: EdgeInsets.all(12),
-                child: ListView(
-                  padding: EdgeInsets.symmetric(vertical: 8),
-                  children: [
-                    Text(
-                      note.title,
-                      style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.white10,
+                        width: 5,
                       ),
-                    ),
-                    SizedBox(height: 5),
-                    Text(
-                      DateFormat.yMMMd().format(note.createdTime),
-                      style: TextStyle(color: Colors.white54),
-                    ),
-                    SizedBox(height: 16),
-                    Text(
-                      note.description,
-                      style: TextStyle(color: Colors.white70, fontSize: 18),
-                    )
-                  ],
+                      borderRadius: BorderRadius.circular(10)),
+                  child: ListView(
+                    padding: EdgeInsets.symmetric(vertical: 8),
+                    children: [
+                      Text(
+                        note.title,
+                        style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        DateFormat.yMMMd().format(note.createdTime),
+                        style: TextStyle(color: Colors.white54),
+                      ),
+                      SizedBox(height: 16),
+                      Text(
+                        note.description,
+                        style: TextStyle(color: Colors.white70, fontSize: 18),
+                      )
+                    ],
+                  ),
                 ),
               ),
       );
